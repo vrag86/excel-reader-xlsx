@@ -163,7 +163,7 @@ sub values {
     }
 
     # Convert any undef values to an empty string.
-	map {$_ = '' if not defined $_} @values;
+	@values = map { (defined $_) ? ($_) : ('') } @values;
 
     # Store the values to allow multiple calls return the same data.
     $self->{_values} = \@values;
