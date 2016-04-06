@@ -126,7 +126,7 @@ sub _get_string {
     my $index = shift;
 
     # Return an empty string is the index is out of bounds.
-    return '' if $index < 0;
+    return '' if ($index eq '' || $index < 0);
     return '' if $index >= $self->{_unique_count};
 
     my $string = $self->{_strings}->[$index];
